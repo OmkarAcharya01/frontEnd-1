@@ -82,7 +82,6 @@ function Section() {
     }
   ];
 
-  // Select News Based On Route
   let newsList = [];
 
   if (name === "India") newsList = indiaNews;
@@ -96,16 +95,18 @@ function Section() {
   return (
     <div className="section-page">
 
-      <div className="section-top">
+      {/* HEADER */}
+      <div className="section-header">
         <h1>{name} News</h1>
-        <Link to="/" className="back-btn">← Back to Home</Link>
+        <Link to="/" className="back-btn-light">← Back to Home</Link>
       </div>
 
-      <div className="news-grid">
+      {/* GRID */}
+      <div className="section-grid">
         {newsList.map((news, index) => (
-          <div key={index} className="news-card">
+          <div key={index} className="section-card">
             <img src={news.img} alt={news.title} />
-            <div className="card-content">
+            <div className="section-content">
               <h3>{news.title}</h3>
               <p>{news.desc}</p>
             </div>

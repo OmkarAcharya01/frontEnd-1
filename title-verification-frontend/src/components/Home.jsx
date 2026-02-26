@@ -77,26 +77,50 @@ function Home() {
       </div>
 
       {/* Breaking News */}
-      <div className="breaking-bar">
-        <div className="breaking-label">Breaking:</div>
-        <div className="ticker-wrapper">
-          <div className="ticker-move">
-            <span>AI-based Title Verification System launched nationwide</span>
-            <span>ISRO announces next moon mission schedule</span>
-            <span>RBI keeps repo rate unchanged</span>
-            <span>Supreme Court reviews digital media guidelines</span>
-            <span>India’s GDP growth steady at 7.3%</span>
+<div className="breaking-bar">
+  <div className="breaking-label">Breaking:</div>
+  <div className="ticker-wrapper">
+    <div className="ticker-move">
+      <span>AI-based Title Verification System launched nationwide</span>
+      <span>ISRO announces next moon mission schedule</span>
+      <span>RBI keeps repo rate unchanged</span>
+      <span>Supreme Court reviews digital media guidelines</span>
 
-            {/* duplicate for smooth loop */}
-            <span>AI-based Title Verification System launched nationwide</span>
-            <span>ISRO announces next moon mission schedule</span>
-            <span>RBI keeps repo rate unchanged</span>
-            <span>Supreme Court reviews digital media guidelines</span>
-            <span>India’s GDP growth steady at 7.3%</span>
-          </div>
-        </div>
-      </div>
+      {/* duplicate for seamless loop */}
+      <span>AI-based Title Verification System launched nationwide</span>
+      <span>ISRO announces next moon mission schedule</span>
+      <span>RBI keeps repo rate unchanged</span>
+      <span>Supreme Court reviews digital media guidelines</span>
+    </div>
+  </div>
+</div>
 
+
+{/* ================= ULTRA PREMIUM HERO ================= */}
+
+<section className="ultra-hero">
+
+  <div className="mesh-layer"></div>
+  <div className="particles"></div>
+
+  <div className="hero-inner">
+    <div className="hero-text">
+      <h2>AI Powered Title Verification</h2>
+      <p>
+        Advanced semantic similarity detection & compliance validation
+        across 160,000+ registered records.
+      </p>
+    </div>
+
+    <div className="ultra-glass-card">
+      <h3>Portal Access</h3>
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      <button>Enter System</button>
+    </div>
+  </div>
+
+</section>
       {/* Auto Changing Headline */}
       <div className="headline-container">
         <h2 key={index} className="fade-headline">
@@ -136,5 +160,6 @@ function Home() {
     </div>
   );
 }
+
 
 export default Home;

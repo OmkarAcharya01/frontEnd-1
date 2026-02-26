@@ -96,30 +96,26 @@ function Home() {
 </div>
 
 
-{/* ================= ULTRA PREMIUM HERO ================= */}
+<section className="nirman-hero">
+  <div className="nirman-bg"></div>
 
-<section className="ultra-hero">
+  <div className="hero-content">
+    <h1 className="hero-title">
+      Welcome to Title Verifier — Your AI News Audit System
+    </h1>
+    <p className="hero-sub">
+      Smart, intuitive and modern solution to validate newspaper titles with AI.
+    </p>
 
-  <div className="mesh-layer"></div>
-  <div className="particles"></div>
-
-  <div className="hero-inner">
-    <div className="hero-text">
-      <h2>AI Powered Title Verification</h2>
-      <p>
-        Advanced semantic similarity detection & compliance validation
-        across 160,000+ registered records.
-      </p>
-    </div>
-
-    <div className="ultra-glass-card">
-      <h3>Portal Access</h3>
-      <input type="text" placeholder="Username" />
-      <input type="password" placeholder="Password" />
-      <button>Enter System</button>
+    <div className="hero-buttons">
+      <Link to="/login" className="main-cta">
+        Get Started
+      </Link>
+      <Link to="#rules" className="secondary-cta">
+        View Rules
+      </Link>
     </div>
   </div>
-
 </section>
       {/* Auto Changing Headline */}
       <div className="headline-container">

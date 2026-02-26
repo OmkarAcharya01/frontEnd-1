@@ -39,15 +39,30 @@ function Home() {
 
       {/* Top Strip */}
       <div className="top-strip">
-        <div>{time.toLocaleDateString()} | {time.toLocaleTimeString()}</div>
-        <div>National Edition</div>
+
+        {/* LEFT SIDE RULES CIRCLE */}
+        <div className="left-rules">
+          <Link to="/rules" className="rules-circle">
+            R
+          </Link>
+        </div>
+
+        {/* CENTER TIME */}
+        <div className="center-time">
+          {time.toLocaleDateString()} | {time.toLocaleTimeString()}
+        </div>
+
+        {/* RIGHT LOGIN */}
+        <div>
+          <Link to="/login" className="login-btn">Login</Link>
+        </div>
+
       </div>
 
       {/* Masthead */}
       <div className="masthead">
         <h1>THE VERIFIER</h1>
         <p className="tagline">Truth • Technology • Transparency</p>
-        <Link to="/login" className="login-btn">Login</Link>
       </div>
 
       {/* Navigation */}
@@ -60,37 +75,28 @@ function Home() {
         <Link to="/section/Opinion">Opinion</Link>
         <Link to="/section/Premium">Premium</Link>
       </div>
-{/* Breaking News Ticker */}
-<div className="breaking-bar">
-  <div className="breaking-label">Breaking:</div>
 
-  <div className="ticker-wrapper">
-    <div className="ticker-move">
-      <span>AI-based Title Verification System launched nationwide</span>
-      <span>ISRO announces next moon mission schedule</span>
-      <span>RBI keeps repo rate unchanged</span>
-      <span>Supreme Court reviews digital media guidelines</span>
-      <span>India’s GDP growth steady at 7.3%</span>
-      <span>Cybersecurity alert issued across states</span>
-      <span>New education reforms approved</span>
-      <span>Stock market hits record high</span>
-      <span>Parliament session to begin Monday</span>
-      <span>Monsoon expected earlier this year</span>
+      {/* Breaking News */}
+      <div className="breaking-bar">
+        <div className="breaking-label">Breaking:</div>
+        <div className="ticker-wrapper">
+          <div className="ticker-move">
+            <span>AI-based Title Verification System launched nationwide</span>
+            <span>ISRO announces next moon mission schedule</span>
+            <span>RBI keeps repo rate unchanged</span>
+            <span>Supreme Court reviews digital media guidelines</span>
+            <span>India’s GDP growth steady at 7.3%</span>
 
-      {/* Duplicate for seamless loop */}
-      <span>AI-based Title Verification System launched nationwide</span>
-      <span>ISRO announces next moon mission schedule</span>
-      <span>RBI keeps repo rate unchanged</span>
-      <span>Supreme Court reviews digital media guidelines</span>
-      <span>India’s GDP growth steady at 7.3%</span>
-      <span>Cybersecurity alert issued across states</span>
-      <span>New education reforms approved</span>
-      <span>Stock market hits record high</span>
-      <span>Parliament session to begin Monday</span>
-      <span>Monsoon expected earlier this year</span>
-    </div>
-  </div>
-</div>
+            {/* duplicate for smooth loop */}
+            <span>AI-based Title Verification System launched nationwide</span>
+            <span>ISRO announces next moon mission schedule</span>
+            <span>RBI keeps repo rate unchanged</span>
+            <span>Supreme Court reviews digital media guidelines</span>
+            <span>India’s GDP growth steady at 7.3%</span>
+          </div>
+        </div>
+      </div>
+
       {/* Auto Changing Headline */}
       <div className="headline-container">
         <h2 key={index} className="fade-headline">
@@ -98,7 +104,7 @@ function Home() {
         </h2>
       </div>
 
-      {/* News Cards Section */}
+      {/* News Cards */}
       <div className="news-grid">
 
         <div className="news-card">

@@ -3,13 +3,35 @@ import { useEffect, useState } from "react";
 
 function Home() {
 
+  const headlines = [
+    "AI-Based Title Verification System Launched Nationwide",
+    "ISRO Announces New Lunar Research Mission",
+    "GDP Growth Reaches 7.3% This Quarter",
+    "Supreme Court Reviews Digital Media Policy",
+    "Cybersecurity Reforms Strengthened Across India",
+    "Smart City Infrastructure Expands to 50 Cities",
+    "Global Climate Summit Begins in Geneva",
+    "Healthcare AI Integration Speeds Up Diagnosis",
+    "Digital Governance Framework Updated",
+    "New Data Protection Bill Introduced"
+  ];
+
+  const [index, setIndex] = useState(0);
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const newsInterval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % headlines.length);
+    }, 3000);
+
+    const clockInterval = setInterval(() => {
       setTime(new Date());
     }, 1000);
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(newsInterval);
+      clearInterval(clockInterval);
+    };
   }, []);
 
   return (
@@ -38,49 +60,69 @@ function Home() {
         <Link to="/section/Opinion">Opinion</Link>
         <Link to="/section/Premium">Premium</Link>
       </div>
+{/* Breaking News Ticker */}
+<div className="breaking-bar">
+  <div className="breaking-label">Breaking:</div>
 
-      {/* Breaking News */}
-      <div className="breaking-bar">
-        <span>Breaking:</span>
-        <div className="scrolling-text">
-          AI-based Title Verification System launched nationwide • ISRO prepares new space mission • Digital governance reforms approved
-        </div>
+  <div className="ticker-wrapper">
+    <div className="ticker-move">
+      <span>AI-based Title Verification System launched nationwide</span>
+      <span>ISRO announces next moon mission schedule</span>
+      <span>RBI keeps repo rate unchanged</span>
+      <span>Supreme Court reviews digital media guidelines</span>
+      <span>India’s GDP growth steady at 7.3%</span>
+      <span>Cybersecurity alert issued across states</span>
+      <span>New education reforms approved</span>
+      <span>Stock market hits record high</span>
+      <span>Parliament session to begin Monday</span>
+      <span>Monsoon expected earlier this year</span>
+
+      {/* Duplicate for seamless loop */}
+      <span>AI-based Title Verification System launched nationwide</span>
+      <span>ISRO announces next moon mission schedule</span>
+      <span>RBI keeps repo rate unchanged</span>
+      <span>Supreme Court reviews digital media guidelines</span>
+      <span>India’s GDP growth steady at 7.3%</span>
+      <span>Cybersecurity alert issued across states</span>
+      <span>New education reforms approved</span>
+      <span>Stock market hits record high</span>
+      <span>Parliament session to begin Monday</span>
+      <span>Monsoon expected earlier this year</span>
+    </div>
+  </div>
+</div>
+      {/* Auto Changing Headline */}
+      <div className="headline-container">
+        <h2 key={index} className="fade-headline">
+          {headlines[index]}
+        </h2>
       </div>
 
-      {/* Main Layout */}
-      <div className="layout">
+      {/* News Cards Section */}
+      <div className="news-grid">
 
-        {/* Left Column */}
-        <div className="left">
-          <h3>Premium</h3>
-          <p>Exclusive investigative reports</p>
-          <p>Government policy deep analysis</p>
-          <p>Editorial insights and interviews</p>
+        <div className="news-card">
+          <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c" alt="news"/>
+          <h3>AI Governance Reform Approved</h3>
+          <p>Government accelerates AI integration to improve transparency and compliance.</p>
         </div>
 
-        {/* Center Column */}
-        <div className="center">
-          <img
-            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c"
-            alt="headline"
-          />
-          <h2>India Accelerates AI-Based Governance Systems</h2>
-          <p>
-            The government integrates AI-driven similarity detection tools
-            to ensure regulatory compliance and streamline title approvals
-            across media sectors.
-          </p>
+        <div className="news-card">
+          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa" alt="news"/>
+          <h3>ISRO Satellite Launch Success</h3>
+          <p>India’s space agency successfully deploys next-generation communication satellite.</p>
         </div>
 
-        {/* Right Column */}
-        <div className="right">
-          <h3>Latest Updates</h3>
-          <ul>
-            <li>GDP growth steady at 7.3%</li>
-            <li>Cybersecurity reforms announced</li>
-            <li>Supreme Court constitutional hearing</li>
-            <li>Smart city expansion approved</li>
-          </ul>
+        <div className="news-card">
+          <img src="https://images.unsplash.com/photo-1559526324-593bc073d938" alt="news"/>
+          <h3>Healthcare AI Boost</h3>
+          <p>AI-driven diagnostic systems reduce hospital waiting time by 30%.</p>
+        </div>
+
+        <div className="news-card">
+          <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe" alt="news"/>
+          <h3>Smart City Expansion</h3>
+          <p>Urban modernization projects approved for 12 additional cities.</p>
         </div>
 
       </div>

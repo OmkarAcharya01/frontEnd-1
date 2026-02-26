@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 function Home() {
+
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -13,27 +13,23 @@ function Home() {
   }, []);
 
   return (
-    <div className="home-wrapper">
+    <div className="newspaper">
 
-      {/* Top Bar */}
-      <div className="top-bar">
+      {/* Top Strip */}
+      <div className="top-strip">
         <div>{time.toLocaleDateString()} | {time.toLocaleTimeString()}</div>
-        <div>Digital Edition</div>
+        <div>National Edition</div>
       </div>
 
       {/* Masthead */}
-      <motion.div 
-        className="masthead"
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div className="masthead">
         <h1>THE VERIFIER</h1>
-        <Link to="/login" className="login-btn">LOGIN</Link>
-      </motion.div>
+        <p className="tagline">Truth • Technology • Transparency</p>
+        <Link to="/login" className="login-btn">Login</Link>
+      </div>
 
       {/* Navigation */}
-      <div className="nav-bar">
+      <div className="nav">
         <Link to="/section/India">India</Link>
         <Link to="/section/World">World</Link>
         <Link to="/section/Movies">Movies</Link>
@@ -43,30 +39,50 @@ function Home() {
         <Link to="/section/Premium">Premium</Link>
       </div>
 
-      {/* Hero */}
-      <motion.div 
-        className="hero-box"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <h2>AI Powered Title Verification</h2>
-        <p>Where Artificial Intelligence meets Journalism Integrity.</p>
-      </motion.div>
+      {/* Breaking News */}
+      <div className="breaking-bar">
+        <span>Breaking:</span>
+        <div className="scrolling-text">
+          AI-based Title Verification System launched nationwide • ISRO prepares new space mission • Digital governance reforms approved
+        </div>
+      </div>
 
-      {/* Floating Cards */}
-      <div className="floating-grid">
-        <motion.div whileHover={{ scale: 1.05 }} className="float-card">
-          🔎 Semantic Similarity Detection
-        </motion.div>
+      {/* Main Layout */}
+      <div className="layout">
 
-        <motion.div whileHover={{ scale: 1.05 }} className="float-card">
-          ⚖ Regulatory Compliance Validation
-        </motion.div>
+        {/* Left Column */}
+        <div className="left">
+          <h3>Premium</h3>
+          <p>Exclusive investigative reports</p>
+          <p>Government policy deep analysis</p>
+          <p>Editorial insights and interviews</p>
+        </div>
 
-        <motion.div whileHover={{ scale: 1.05 }} className="float-card">
-          🤖 AI Based Title Uniqueness Engine
-        </motion.div>
+        {/* Center Column */}
+        <div className="center">
+          <img
+            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c"
+            alt="headline"
+          />
+          <h2>India Accelerates AI-Based Governance Systems</h2>
+          <p>
+            The government integrates AI-driven similarity detection tools
+            to ensure regulatory compliance and streamline title approvals
+            across media sectors.
+          </p>
+        </div>
+
+        {/* Right Column */}
+        <div className="right">
+          <h3>Latest Updates</h3>
+          <ul>
+            <li>GDP growth steady at 7.3%</li>
+            <li>Cybersecurity reforms announced</li>
+            <li>Supreme Court constitutional hearing</li>
+            <li>Smart city expansion approved</li>
+          </ul>
+        </div>
+
       </div>
 
     </div>
